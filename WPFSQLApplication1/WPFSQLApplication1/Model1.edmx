@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DemoCompSysElesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="F_NAPLO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SZAMID" Type="int" />
+          <Property Name="X_BANKSZID" Type="int" />
+          <Property Name="SZALLAFAID" Type="int" />
+          <Property Name="VEVOAFAID" Type="int" />
+          <Property Name="KPSZALLID" Type="int" />
+          <Property Name="KPVEVOID" Type="int" />
+          <Property Name="ERVDATTOL" Type="datetime" />
+          <Property Name="ERVDATIG" Type="datetime" />
+          <Property Name="MEGN" Type="varchar" MaxLength="40" />
+          <Property Name="TARTKOV" Type="varchar" MaxLength="1" />
+          <Property Name="afaid" Type="int" />
+          <Property Name="X_BANKSZID2" Type="int" />
+          <Property Name="CLIPPERKOD" Type="varchar" MaxLength="2" />
+          <Property Name="zardat" Type="datetime" />
+          <Property Name="DevizaKonyveles" Type="varchar" MaxLength="1" />
+          <Property Name="ArfKulKonyv" Type="varchar" MaxLength="1" />
+          <Property Name="BizonylatNyomtat" Type="char" MaxLength="1" />
+          <Property Name="RegiKod" Type="varchar" MaxLength="2" />
+          <Property Name="BruttoKonyveles" Type="char" MaxLength="1" />
+          <Property Name="AutoBizszam" Type="char" MaxLength="1" />
+          <Property Name="ZardatSave" Type="datetime" />
+        </EntityType>
+        <EntityType Name="F_TUKOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ERVDATTOL" Type="datetime" />
+          <Property Name="ERVDATIG" Type="datetime" />
+          <Property Name="SZAM" Type="varchar" MaxLength="8" />
+          <Property Name="MEGN" Type="varchar" MaxLength="100" />
+          <Property Name="FOKIV" Type="int" Nullable="false" />
+          <Property Name="KTGSZAM" Type="varchar" MaxLength="8" />
+          <Property Name="NYITOSZLA" Type="varchar" MaxLength="8" />
+          <Property Name="X_MSZID" Type="int" />
+          <Property Name="KELLMSZAM" Type="char" MaxLength="1" />
+          <Property Name="SZAM2" Type="varchar" MaxLength="8" />
+          <Property Name="MEGN2" Type="varchar" MaxLength="40" />
+          <Property Name="SZAM3" Type="varchar" MaxLength="8" />
+          <Property Name="MEGN3" Type="varchar" MaxLength="100" />
+          <Property Name="SZAM4" Type="varchar" MaxLength="8" />
+          <Property Name="MEGN4" Type="varchar" MaxLength="40" />
+          <Property Name="KEZELOID" Type="int" />
+          <Property Name="x_devid" Type="int" />
+          <Property Name="atvmirol" Type="varchar" MaxLength="8" />
+          <Property Name="atvmire" Type="varchar" MaxLength="8" />
+          <Property Name="MszBevKiad" Type="varchar" MaxLength="2" />
+          <Property Name="AfaMukKod" Type="varchar" MaxLength="10" />
+          <Property Name="NemKellBankMegbizas" Type="varchar" MaxLength="1" />
+          <Property Name="Inaktiv" Type="char" MaxLength="1" />
+          <Property Name="Datumtol" Type="datetime" />
+          <Property Name="Afakod" Type="char" MaxLength="1" />
+          <Property Name="HostName" Type="varchar" MaxLength="100" />
+          <Property Name="SystemUser" Type="varchar" MaxLength="100" />
+          <Property Name="AppName" Type="varchar" MaxLength="100" />
+          <Property Name="ProcName" Type="varchar" MaxLength="100" />
+          <Property Name="DevizaErtekeles" Type="char" MaxLength="1" />
+          <Property Name="DevEgyenlegAtert" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DemoCompSysEles.dbo.x_Param' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="x_Param">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Ervdattol" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Param" Type="varchar" MaxLength="100" />
+          <Property Name="Ertek" Type="varchar" MaxLength="500" />
+          <Property Name="Ervdattol" Type="datetime" Nullable="false" />
+          <Property Name="Ervdatig" Type="datetime" />
+          <Property Name="Megj" Type="varchar" MaxLength="500" />
+          <Property Name="UserParam" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="X_PARTNER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="X_VALLALATID" Type="int" />
+          <Property Name="PARTCSOP" Type="varchar" MaxLength="4" />
+          <Property Name="KOD" Type="varchar" MaxLength="5" />
+          <Property Name="ADOSZAM" Type="varchar" MaxLength="13" />
+          <Property Name="MEGN" Type="varchar" MaxLength="100" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="50" />
+          <Property Name="FAX" Type="varchar" MaxLength="50" />
+          <Property Name="EMIL" Type="varchar" MaxLength="50" />
+          <Property Name="WEB" Type="varchar" MaxLength="50" />
+          <Property Name="ORSZAG" Type="varchar" MaxLength="50" />
+          <Property Name="IRSZ" Type="varchar" MaxLength="6" />
+          <Property Name="VAROS" Type="varchar" MaxLength="50" />
+          <Property Name="UTCA" Type="varchar" MaxLength="50" />
+          <Property Name="UGYINT" Type="varchar" MaxLength="50" />
+          <Property Name="UGYINTTEL" Type="varchar" MaxLength="50" />
+          <Property Name="ARFORMA" Type="char" MaxLength="1" />
+          <Property Name="ERVDATTOL" Type="datetime" />
+          <Property Name="ERVDATIG" Type="datetime" />
+          <Property Name="BANKSZLA" Type="varchar" MaxLength="50" />
+          <Property Name="kezeloid" Type="int" />
+          <Property Name="vevofsz" Type="varchar" MaxLength="8" />
+          <Property Name="szallfsz" Type="varchar" MaxLength="8" />
+          <Property Name="esednap" Type="int" />
+          <Property Name="kedvezm" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="korrkod" Type="char" MaxLength="2" />
+          <Property Name="fizdatjel" Type="int" />
+          <Property Name="lev_utca" Type="varchar" MaxLength="30" />
+          <Property Name="fizmod" Type="varchar" MaxLength="50" />
+          <Property Name="ugynokkod" Type="varchar" MaxLength="50" />
+          <Property Name="szlapeld" Type="int" />
+          <Property Name="felettes" Type="varchar" MaxLength="5" />
+          <Property Name="KM" Type="int" />
+          <Property Name="CEGVEZ" Type="nvarchar" MaxLength="30" />
+          <Property Name="CEGVTEL" Type="varchar" MaxLength="20" />
+          <Property Name="FOKONY" Type="varchar" MaxLength="30" />
+          <Property Name="FOKOTEL" Type="varchar" MaxLength="20" />
+          <Property Name="PUVEZ" Type="varchar" MaxLength="30" />
+          <Property Name="PUVETEL" Type="varchar" MaxLength="20" />
+          <Property Name="BERO" Type="varchar" MaxLength="30" />
+          <Property Name="BEROTEL" Type="varchar" MaxLength="20" />
+          <Property Name="SBANKSZ" Type="varchar" MaxLength="50" />
+          <Property Name="SZTP" Type="varchar" MaxLength="8" />
+          <Property Name="DEV" Type="varchar" MaxLength="3" />
+          <Property Name="SZLANYELV" Type="varchar" MaxLength="15" />
+          <Property Name="KEDV" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="lev_irsz" Type="varchar" MaxLength="6" />
+          <Property Name="lev_varos" Type="varchar" MaxLength="50" />
+          <Property Name="x_devid" Type="int" />
+          <Property Name="pazonok" Type="varchar" MaxLength="300" />
+          <Property Name="forras" Type="varchar" MaxLength="50" />
+          <Property Name="Megye" Type="varchar" MaxLength="30" />
+          <Property Name="Megj" Type="varchar" MaxLength="500" />
+          <Property Name="Erdemi" Type="varchar" MaxLength="1" />
+          <Property Name="Tulajdonsag" Type="varchar" MaxLength="210" />
+          <Property Name="CegvMobil" Type="varchar" MaxLength="20" />
+          <Property Name="KontaktNev" Type="varchar" MaxLength="30" />
+          <Property Name="KontaktTel" Type="varchar" MaxLength="20" />
+          <Property Name="KontaktMobil" Type="varchar" MaxLength="20" />
+          <Property Name="TevKor1" Type="varchar" MaxLength="50" />
+          <Property Name="TevKor2" Type="varchar" MaxLength="50" />
+          <Property Name="TevKor3" Type="varchar" MaxLength="50" />
+          <Property Name="TevKor4" Type="varchar" MaxLength="50" />
+          <Property Name="TevKor5" Type="varchar" MaxLength="50" />
+          <Property Name="x_vallalat_id" Type="int" />
+          <Property Name="megn1" Type="varchar" MaxLength="50" />
+          <Property Name="megn2" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="ugynok" Type="varchar" MaxLength="50" />
+          <Property Name="lev_megn" Type="varchar" MaxLength="100" />
+          <Property Name="EUAdoszam" Type="varchar" MaxLength="50" />
+          <Property Name="Cegjegyzekszam" Type="varchar" MaxLength="10" />
+          <Property Name="Mubiz" Type="char" MaxLength="1" />
+          <Property Name="legjobbar" Type="char" MaxLength="1" />
+          <Property Name="megjegyzes" Type="varchar" MaxLength="500" />
+          <Property Name="csoport1" Type="varchar" MaxLength="3" />
+          <Property Name="csoport2" Type="varchar" MaxLength="3" />
+          <Property Name="csoport3" Type="varchar" MaxLength="3" />
+          <Property Name="AnyacegADOSZAM" Type="varchar" MaxLength="50" />
+          <Property Name="AnyacegEUADOSZAM" Type="varchar" MaxLength="50" />
+          <Property Name="FFNemKell" Type="varchar" MaxLength="1" />
+          <Property Name="Mszam" Type="varchar" MaxLength="11" />
+          <Property Name="NemKellBankMegbizas" Type="varchar" MaxLength="1" />
+          <Property Name="Aktiv" Type="int" />
+          <Property Name="TurelmiIdo" Type="int" />
+          <Property Name="BelsoPartner" Type="char" MaxLength="1" />
+          <Property Name="GLN_UNB_delivery_address" Type="varchar" MaxLength="30" />
+          <Property Name="GLN_delivery_address" Type="varchar" MaxLength="30" />
+          <Property Name="GLN_invoice_address" Type="varchar" MaxLength="30" />
+          <Property Name="Partnerkodom" Type="varchar" MaxLength="20" />
+          <Property Name="KonyveloirodaPartnerkod" Type="varchar" MaxLength="30" />
+          <Property Name="XMAgazatId" Type="int" />
+          <Property Name="AdoAzon" Type="varchar" MaxLength="10" />
+          <Property Name="OstermIgSzam" Type="varchar" MaxLength="30" />
+          <Property Name="OstermRegSzam" Type="varchar" MaxLength="30" />
+          <Property Name="HostName" Type="varchar" MaxLength="100" />
+          <Property Name="SystemUser" Type="varchar" MaxLength="100" />
+          <Property Name="AppName" Type="varchar" MaxLength="100" />
+          <Property Name="ProcName" Type="varchar" MaxLength="100" />
+          <Property Name="SzemelyId" Type="int" />
+          <Property Name="Statusz" Type="int" />
+          <Property Name="Prioritas" Type="int" />
+          <Property Name="MszamEleje" Type="varchar" MaxLength="11" />
+          <Property Name="Letszam" Type="int" />
+          <Property Name="SzerzKapcsKezd" Type="datetime" />
+          <Property Name="KeszlFokSzam" Type="varchar" MaxLength="8" />
+          <Property Name="ElabeFokSzam" Type="varchar" MaxLength="8" />
+          <Property Name="NAVXMLIrsz" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLTelepules" Type="varchar" MaxLength="50" />
+          <Property Name="NAVXMLKerulet" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLKozterNev" Type="varchar" MaxLength="50" />
+          <Property Name="NAVXMLKozterJel" Type="varchar" MaxLength="50" />
+          <Property Name="NAVXMLHazszam" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLEpulet" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLLepcsohaz" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLSzint" Type="varchar" MaxLength="20" />
+          <Property Name="NAVXMLAjto" Type="varchar" MaxLength="10" />
+          <Property Name="NAVXMLCimbont" Type="datetime" />
+          <Property Name="SzlaPostaUA" Type="char" MaxLength="1" />
+          <Property Name="SzlaEmail" Type="varchar" MaxLength="100" />
+          <Property Name="sz_irsz" Type="varchar" MaxLength="6" />
+          <Property Name="sz_varos" Type="varchar" MaxLength="50" />
+          <Property Name="sz_utca" Type="varchar" MaxLength="50" />
+          <Property Name="CsoportAdoszam" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <Association Name="FK_F_NAPLO_F_TUKOR">
+          <End Role="F_TUKOR" Type="Self.F_TUKOR" Multiplicity="0..1" />
+          <End Role="F_NAPLO" Type="Self.F_NAPLO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_TUKOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="F_NAPLO">
+              <PropertyRef Name="SZAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DemoCompSysElesModelStoreContainer">
+          <EntitySet Name="F_NAPLO" EntityType="Self.F_NAPLO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="F_TUKOR" EntityType="Self.F_TUKOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="X_PARTNER" EntityType="Self.X_PARTNER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="x_Param" EntityType="Self.x_Param" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [x_Param].[id] AS [id], 
+    [x_Param].[Param] AS [Param], 
+    [x_Param].[Ertek] AS [Ertek], 
+    [x_Param].[Ervdattol] AS [Ervdattol], 
+    [x_Param].[Ervdatig] AS [Ervdatig], 
+    [x_Param].[Megj] AS [Megj], 
+    [x_Param].[UserParam] AS [UserParam]
+    FROM [dbo].[x_Param] AS [x_Param]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_F_NAPLO_F_TUKOR" Association="Self.FK_F_NAPLO_F_TUKOR">
+            <End Role="F_TUKOR" EntitySet="F_TUKOR" />
+            <End Role="F_NAPLO" EntitySet="F_NAPLO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DemoCompSysElesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="F_NAPLO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SZAMID" Type="Int32" />
+          <Property Name="X_BANKSZID" Type="Int32" />
+          <Property Name="SZALLAFAID" Type="Int32" />
+          <Property Name="VEVOAFAID" Type="Int32" />
+          <Property Name="KPSZALLID" Type="Int32" />
+          <Property Name="KPVEVOID" Type="Int32" />
+          <Property Name="ERVDATTOL" Type="DateTime" Precision="3" />
+          <Property Name="ERVDATIG" Type="DateTime" Precision="3" />
+          <Property Name="MEGN" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TARTKOV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="afaid" Type="Int32" />
+          <Property Name="X_BANKSZID2" Type="Int32" />
+          <Property Name="CLIPPERKOD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="zardat" Type="DateTime" Precision="3" />
+          <Property Name="DevizaKonyveles" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ArfKulKonyv" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BizonylatNyomtat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RegiKod" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BruttoKonyveles" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AutoBizszam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ZardatSave" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="F_TUKOR" Relationship="Self.FK_F_NAPLO_F_TUKOR" FromRole="F_NAPLO" ToRole="F_TUKOR" />
+        </EntityType>
+        <EntityType Name="F_TUKOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ERVDATTOL" Type="DateTime" Precision="3" />
+          <Property Name="ERVDATIG" Type="DateTime" Precision="3" />
+          <Property Name="SZAM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MEGN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FOKIV" Type="Int32" Nullable="false" />
+          <Property Name="KTGSZAM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="NYITOSZLA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="X_MSZID" Type="Int32" />
+          <Property Name="KELLMSZAM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SZAM2" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MEGN2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SZAM3" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MEGN3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SZAM4" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MEGN4" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="KEZELOID" Type="Int32" />
+          <Property Name="x_devid" Type="Int32" />
+          <Property Name="atvmirol" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="atvmire" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MszBevKiad" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AfaMukKod" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NemKellBankMegbizas" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Inaktiv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Datumtol" Type="DateTime" Precision="3" />
+          <Property Name="Afakod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HostName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SystemUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AppName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProcName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DevizaErtekeles" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DevEgyenlegAtert" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="F_NAPLO" Relationship="Self.FK_F_NAPLO_F_TUKOR" FromRole="F_TUKOR" ToRole="F_NAPLO" />
+        </EntityType>
+        <EntityType Name="X_PARTNER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="X_VALLALATID" Type="Int32" />
+          <Property Name="PARTCSOP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="KOD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ADOSZAM" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="MEGN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WEB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORSZAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IRSZ" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="VAROS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UTCA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UGYINT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UGYINTTEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ARFORMA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ERVDATTOL" Type="DateTime" Precision="3" />
+          <Property Name="ERVDATIG" Type="DateTime" Precision="3" />
+          <Property Name="BANKSZLA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kezeloid" Type="Int32" />
+          <Property Name="vevofsz" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="szallfsz" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="esednap" Type="Int32" />
+          <Property Name="kedvezm" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="korrkod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="fizdatjel" Type="Int32" />
+          <Property Name="lev_utca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="fizmod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ugynokkod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="szlapeld" Type="Int32" />
+          <Property Name="felettes" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="KM" Type="Int32" />
+          <Property Name="CEGVEZ" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CEGVTEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FOKONY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FOKOTEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PUVEZ" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PUVETEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BERO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BEROTEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SBANKSZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SZTP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="DEV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="SZLANYELV" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="KEDV" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="lev_irsz" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="lev_varos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="x_devid" Type="Int32" />
+          <Property Name="pazonok" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="forras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Megye" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Megj" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Erdemi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Tulajdonsag" Type="String" MaxLength="210" FixedLength="false" Unicode="false" />
+          <Property Name="CegvMobil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktNev" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KontaktMobil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TevKor1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TevKor2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TevKor3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TevKor4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TevKor5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="x_vallalat_id" Type="Int32" />
+          <Property Name="megn1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="megn2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ugynok" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lev_megn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EUAdoszam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cegjegyzekszam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Mubiz" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="legjobbar" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="megjegyzes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="csoport1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="csoport2" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="csoport3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AnyacegADOSZAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnyacegEUADOSZAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FFNemKell" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Mszam" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="NemKellBankMegbizas" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Aktiv" Type="Int32" />
+          <Property Name="TurelmiIdo" Type="Int32" />
+          <Property Name="BelsoPartner" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="GLN_UNB_delivery_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GLN_delivery_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GLN_invoice_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Partnerkodom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KonyveloirodaPartnerkod" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="XMAgazatId" Type="Int32" />
+          <Property Name="AdoAzon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OstermIgSzam" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OstermRegSzam" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HostName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SystemUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AppName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProcName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SzemelyId" Type="Int32" />
+          <Property Name="Statusz" Type="Int32" />
+          <Property Name="Prioritas" Type="Int32" />
+          <Property Name="MszamEleje" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Letszam" Type="Int32" />
+          <Property Name="SzerzKapcsKezd" Type="DateTime" Precision="3" />
+          <Property Name="KeszlFokSzam" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ElabeFokSzam" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLIrsz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLTelepules" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLKerulet" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLKozterNev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLKozterJel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLHazszam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLEpulet" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLLepcsohaz" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLSzint" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLAjto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAVXMLCimbont" Type="DateTime" Precision="3" />
+          <Property Name="SzlaPostaUA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SzlaEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="sz_irsz" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="sz_varos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sz_utca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CsoportAdoszam" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="x_Param">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Ervdattol" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Param" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ertek" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Ervdattol" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Ervdatig" Type="DateTime" Precision="3" />
+          <Property Name="Megj" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UserParam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_F_NAPLO_F_TUKOR">
+          <End Role="F_TUKOR" Type="Self.F_TUKOR" Multiplicity="0..1" />
+          <End Role="F_NAPLO" Type="Self.F_NAPLO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_TUKOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="F_NAPLO">
+              <PropertyRef Name="SZAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DemoCompSysElesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="F_NAPLO" EntityType="Self.F_NAPLO" />
+          <EntitySet Name="F_TUKOR" EntityType="Self.F_TUKOR" />
+          <EntitySet Name="X_PARTNER" EntityType="Self.X_PARTNER" />
+          <EntitySet Name="x_Param" EntityType="Self.x_Param" />
+          <AssociationSet Name="FK_F_NAPLO_F_TUKOR" Association="Self.FK_F_NAPLO_F_TUKOR">
+            <End Role="F_TUKOR" EntitySet="F_TUKOR" />
+            <End Role="F_NAPLO" EntitySet="F_NAPLO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DemoCompSysElesModelStoreContainer" CdmEntityContainer="DemoCompSysElesEntities">
+          <EntitySetMapping Name="F_NAPLO">
+            <EntityTypeMapping TypeName="DemoCompSysElesModel.F_NAPLO">
+              <MappingFragment StoreEntitySet="F_NAPLO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SZAMID" ColumnName="SZAMID" />
+                <ScalarProperty Name="X_BANKSZID" ColumnName="X_BANKSZID" />
+                <ScalarProperty Name="SZALLAFAID" ColumnName="SZALLAFAID" />
+                <ScalarProperty Name="VEVOAFAID" ColumnName="VEVOAFAID" />
+                <ScalarProperty Name="KPSZALLID" ColumnName="KPSZALLID" />
+                <ScalarProperty Name="KPVEVOID" ColumnName="KPVEVOID" />
+                <ScalarProperty Name="ERVDATTOL" ColumnName="ERVDATTOL" />
+                <ScalarProperty Name="ERVDATIG" ColumnName="ERVDATIG" />
+                <ScalarProperty Name="MEGN" ColumnName="MEGN" />
+                <ScalarProperty Name="TARTKOV" ColumnName="TARTKOV" />
+                <ScalarProperty Name="afaid" ColumnName="afaid" />
+                <ScalarProperty Name="X_BANKSZID2" ColumnName="X_BANKSZID2" />
+                <ScalarProperty Name="CLIPPERKOD" ColumnName="CLIPPERKOD" />
+                <ScalarProperty Name="zardat" ColumnName="zardat" />
+                <ScalarProperty Name="DevizaKonyveles" ColumnName="DevizaKonyveles" />
+                <ScalarProperty Name="ArfKulKonyv" ColumnName="ArfKulKonyv" />
+                <ScalarProperty Name="BizonylatNyomtat" ColumnName="BizonylatNyomtat" />
+                <ScalarProperty Name="RegiKod" ColumnName="RegiKod" />
+                <ScalarProperty Name="BruttoKonyveles" ColumnName="BruttoKonyveles" />
+                <ScalarProperty Name="AutoBizszam" ColumnName="AutoBizszam" />
+                <ScalarProperty Name="ZardatSave" ColumnName="ZardatSave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="F_TUKOR">
+            <EntityTypeMapping TypeName="DemoCompSysElesModel.F_TUKOR">
+              <MappingFragment StoreEntitySet="F_TUKOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ERVDATTOL" ColumnName="ERVDATTOL" />
+                <ScalarProperty Name="ERVDATIG" ColumnName="ERVDATIG" />
+                <ScalarProperty Name="SZAM" ColumnName="SZAM" />
+                <ScalarProperty Name="MEGN" ColumnName="MEGN" />
+                <ScalarProperty Name="FOKIV" ColumnName="FOKIV" />
+                <ScalarProperty Name="KTGSZAM" ColumnName="KTGSZAM" />
+                <ScalarProperty Name="NYITOSZLA" ColumnName="NYITOSZLA" />
+                <ScalarProperty Name="X_MSZID" ColumnName="X_MSZID" />
+                <ScalarProperty Name="KELLMSZAM" ColumnName="KELLMSZAM" />
+                <ScalarProperty Name="SZAM2" ColumnName="SZAM2" />
+                <ScalarProperty Name="MEGN2" ColumnName="MEGN2" />
+                <ScalarProperty Name="SZAM3" ColumnName="SZAM3" />
+                <ScalarProperty Name="MEGN3" ColumnName="MEGN3" />
+                <ScalarProperty Name="SZAM4" ColumnName="SZAM4" />
+                <ScalarProperty Name="MEGN4" ColumnName="MEGN4" />
+                <ScalarProperty Name="KEZELOID" ColumnName="KEZELOID" />
+                <ScalarProperty Name="x_devid" ColumnName="x_devid" />
+                <ScalarProperty Name="atvmirol" ColumnName="atvmirol" />
+                <ScalarProperty Name="atvmire" ColumnName="atvmire" />
+                <ScalarProperty Name="MszBevKiad" ColumnName="MszBevKiad" />
+                <ScalarProperty Name="AfaMukKod" ColumnName="AfaMukKod" />
+                <ScalarProperty Name="NemKellBankMegbizas" ColumnName="NemKellBankMegbizas" />
+                <ScalarProperty Name="Inaktiv" ColumnName="Inaktiv" />
+                <ScalarProperty Name="Datumtol" ColumnName="Datumtol" />
+                <ScalarProperty Name="Afakod" ColumnName="Afakod" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="SystemUser" ColumnName="SystemUser" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="ProcName" ColumnName="ProcName" />
+                <ScalarProperty Name="DevizaErtekeles" ColumnName="DevizaErtekeles" />
+                <ScalarProperty Name="DevEgyenlegAtert" ColumnName="DevEgyenlegAtert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_PARTNER">
+            <EntityTypeMapping TypeName="DemoCompSysElesModel.X_PARTNER">
+              <MappingFragment StoreEntitySet="X_PARTNER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="X_VALLALATID" ColumnName="X_VALLALATID" />
+                <ScalarProperty Name="PARTCSOP" ColumnName="PARTCSOP" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="ADOSZAM" ColumnName="ADOSZAM" />
+                <ScalarProperty Name="MEGN" ColumnName="MEGN" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="EMIL" ColumnName="EMIL" />
+                <ScalarProperty Name="WEB" ColumnName="WEB" />
+                <ScalarProperty Name="ORSZAG" ColumnName="ORSZAG" />
+                <ScalarProperty Name="IRSZ" ColumnName="IRSZ" />
+                <ScalarProperty Name="VAROS" ColumnName="VAROS" />
+                <ScalarProperty Name="UTCA" ColumnName="UTCA" />
+                <ScalarProperty Name="UGYINT" ColumnName="UGYINT" />
+                <ScalarProperty Name="UGYINTTEL" ColumnName="UGYINTTEL" />
+                <ScalarProperty Name="ARFORMA" ColumnName="ARFORMA" />
+                <ScalarProperty Name="ERVDATTOL" ColumnName="ERVDATTOL" />
+                <ScalarProperty Name="ERVDATIG" ColumnName="ERVDATIG" />
+                <ScalarProperty Name="BANKSZLA" ColumnName="BANKSZLA" />
+                <ScalarProperty Name="kezeloid" ColumnName="kezeloid" />
+                <ScalarProperty Name="vevofsz" ColumnName="vevofsz" />
+                <ScalarProperty Name="szallfsz" ColumnName="szallfsz" />
+                <ScalarProperty Name="esednap" ColumnName="esednap" />
+                <ScalarProperty Name="kedvezm" ColumnName="kedvezm" />
+                <ScalarProperty Name="korrkod" ColumnName="korrkod" />
+                <ScalarProperty Name="fizdatjel" ColumnName="fizdatjel" />
+                <ScalarProperty Name="lev_utca" ColumnName="lev_utca" />
+                <ScalarProperty Name="fizmod" ColumnName="fizmod" />
+                <ScalarProperty Name="ugynokkod" ColumnName="ugynokkod" />
+                <ScalarProperty Name="szlapeld" ColumnName="szlapeld" />
+                <ScalarProperty Name="felettes" ColumnName="felettes" />
+                <ScalarProperty Name="KM" ColumnName="KM" />
+                <ScalarProperty Name="CEGVEZ" ColumnName="CEGVEZ" />
+                <ScalarProperty Name="CEGVTEL" ColumnName="CEGVTEL" />
+                <ScalarProperty Name="FOKONY" ColumnName="FOKONY" />
+                <ScalarProperty Name="FOKOTEL" ColumnName="FOKOTEL" />
+                <ScalarProperty Name="PUVEZ" ColumnName="PUVEZ" />
+                <ScalarProperty Name="PUVETEL" ColumnName="PUVETEL" />
+                <ScalarProperty Name="BERO" ColumnName="BERO" />
+                <ScalarProperty Name="BEROTEL" ColumnName="BEROTEL" />
+                <ScalarProperty Name="SBANKSZ" ColumnName="SBANKSZ" />
+                <ScalarProperty Name="SZTP" ColumnName="SZTP" />
+                <ScalarProperty Name="DEV" ColumnName="DEV" />
+                <ScalarProperty Name="SZLANYELV" ColumnName="SZLANYELV" />
+                <ScalarProperty Name="KEDV" ColumnName="KEDV" />
+                <ScalarProperty Name="lev_irsz" ColumnName="lev_irsz" />
+                <ScalarProperty Name="lev_varos" ColumnName="lev_varos" />
+                <ScalarProperty Name="x_devid" ColumnName="x_devid" />
+                <ScalarProperty Name="pazonok" ColumnName="pazonok" />
+                <ScalarProperty Name="forras" ColumnName="forras" />
+                <ScalarProperty Name="Megye" ColumnName="Megye" />
+                <ScalarProperty Name="Megj" ColumnName="Megj" />
+                <ScalarProperty Name="Erdemi" ColumnName="Erdemi" />
+                <ScalarProperty Name="Tulajdonsag" ColumnName="Tulajdonsag" />
+                <ScalarProperty Name="CegvMobil" ColumnName="CegvMobil" />
+                <ScalarProperty Name="KontaktNev" ColumnName="KontaktNev" />
+                <ScalarProperty Name="KontaktTel" ColumnName="KontaktTel" />
+                <ScalarProperty Name="KontaktMobil" ColumnName="KontaktMobil" />
+                <ScalarProperty Name="TevKor1" ColumnName="TevKor1" />
+                <ScalarProperty Name="TevKor2" ColumnName="TevKor2" />
+                <ScalarProperty Name="TevKor3" ColumnName="TevKor3" />
+                <ScalarProperty Name="TevKor4" ColumnName="TevKor4" />
+                <ScalarProperty Name="TevKor5" ColumnName="TevKor5" />
+                <ScalarProperty Name="x_vallalat_id" ColumnName="x_vallalat_id" />
+                <ScalarProperty Name="megn1" ColumnName="megn1" />
+                <ScalarProperty Name="megn2" ColumnName="megn2" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ugynok" ColumnName="ugynok" />
+                <ScalarProperty Name="lev_megn" ColumnName="lev_megn" />
+                <ScalarProperty Name="EUAdoszam" ColumnName="EUAdoszam" />
+                <ScalarProperty Name="Cegjegyzekszam" ColumnName="Cegjegyzekszam" />
+                <ScalarProperty Name="Mubiz" ColumnName="Mubiz" />
+                <ScalarProperty Name="legjobbar" ColumnName="legjobbar" />
+                <ScalarProperty Name="megjegyzes" ColumnName="megjegyzes" />
+                <ScalarProperty Name="csoport1" ColumnName="csoport1" />
+                <ScalarProperty Name="csoport2" ColumnName="csoport2" />
+                <ScalarProperty Name="csoport3" ColumnName="csoport3" />
+                <ScalarProperty Name="AnyacegADOSZAM" ColumnName="AnyacegADOSZAM" />
+                <ScalarProperty Name="AnyacegEUADOSZAM" ColumnName="AnyacegEUADOSZAM" />
+                <ScalarProperty Name="FFNemKell" ColumnName="FFNemKell" />
+                <ScalarProperty Name="Mszam" ColumnName="Mszam" />
+                <ScalarProperty Name="NemKellBankMegbizas" ColumnName="NemKellBankMegbizas" />
+                <ScalarProperty Name="Aktiv" ColumnName="Aktiv" />
+                <ScalarProperty Name="TurelmiIdo" ColumnName="TurelmiIdo" />
+                <ScalarProperty Name="BelsoPartner" ColumnName="BelsoPartner" />
+                <ScalarProperty Name="GLN_UNB_delivery_address" ColumnName="GLN_UNB_delivery_address" />
+                <ScalarProperty Name="GLN_delivery_address" ColumnName="GLN_delivery_address" />
+                <ScalarProperty Name="GLN_invoice_address" ColumnName="GLN_invoice_address" />
+                <ScalarProperty Name="Partnerkodom" ColumnName="Partnerkodom" />
+                <ScalarProperty Name="KonyveloirodaPartnerkod" ColumnName="KonyveloirodaPartnerkod" />
+                <ScalarProperty Name="XMAgazatId" ColumnName="XMAgazatId" />
+                <ScalarProperty Name="AdoAzon" ColumnName="AdoAzon" />
+                <ScalarProperty Name="OstermIgSzam" ColumnName="OstermIgSzam" />
+                <ScalarProperty Name="OstermRegSzam" ColumnName="OstermRegSzam" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="SystemUser" ColumnName="SystemUser" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="ProcName" ColumnName="ProcName" />
+                <ScalarProperty Name="SzemelyId" ColumnName="SzemelyId" />
+                <ScalarProperty Name="Statusz" ColumnName="Statusz" />
+                <ScalarProperty Name="Prioritas" ColumnName="Prioritas" />
+                <ScalarProperty Name="MszamEleje" ColumnName="MszamEleje" />
+                <ScalarProperty Name="Letszam" ColumnName="Letszam" />
+                <ScalarProperty Name="SzerzKapcsKezd" ColumnName="SzerzKapcsKezd" />
+                <ScalarProperty Name="KeszlFokSzam" ColumnName="KeszlFokSzam" />
+                <ScalarProperty Name="ElabeFokSzam" ColumnName="ElabeFokSzam" />
+                <ScalarProperty Name="NAVXMLIrsz" ColumnName="NAVXMLIrsz" />
+                <ScalarProperty Name="NAVXMLTelepules" ColumnName="NAVXMLTelepules" />
+                <ScalarProperty Name="NAVXMLKerulet" ColumnName="NAVXMLKerulet" />
+                <ScalarProperty Name="NAVXMLKozterNev" ColumnName="NAVXMLKozterNev" />
+                <ScalarProperty Name="NAVXMLKozterJel" ColumnName="NAVXMLKozterJel" />
+                <ScalarProperty Name="NAVXMLHazszam" ColumnName="NAVXMLHazszam" />
+                <ScalarProperty Name="NAVXMLEpulet" ColumnName="NAVXMLEpulet" />
+                <ScalarProperty Name="NAVXMLLepcsohaz" ColumnName="NAVXMLLepcsohaz" />
+                <ScalarProperty Name="NAVXMLSzint" ColumnName="NAVXMLSzint" />
+                <ScalarProperty Name="NAVXMLAjto" ColumnName="NAVXMLAjto" />
+                <ScalarProperty Name="NAVXMLCimbont" ColumnName="NAVXMLCimbont" />
+                <ScalarProperty Name="SzlaPostaUA" ColumnName="SzlaPostaUA" />
+                <ScalarProperty Name="SzlaEmail" ColumnName="SzlaEmail" />
+                <ScalarProperty Name="sz_irsz" ColumnName="sz_irsz" />
+                <ScalarProperty Name="sz_varos" ColumnName="sz_varos" />
+                <ScalarProperty Name="sz_utca" ColumnName="sz_utca" />
+                <ScalarProperty Name="CsoportAdoszam" ColumnName="CsoportAdoszam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="x_Param">
+            <EntityTypeMapping TypeName="DemoCompSysElesModel.x_Param">
+              <MappingFragment StoreEntitySet="x_Param">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Param" ColumnName="Param" />
+                <ScalarProperty Name="Ertek" ColumnName="Ertek" />
+                <ScalarProperty Name="Ervdattol" ColumnName="Ervdattol" />
+                <ScalarProperty Name="Ervdatig" ColumnName="Ervdatig" />
+                <ScalarProperty Name="Megj" ColumnName="Megj" />
+                <ScalarProperty Name="UserParam" ColumnName="UserParam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
